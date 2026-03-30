@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Snake Zen</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FDFBF7;
+      --card: #FFFFFF;
+      --card-soft: #F3EFE6;
+      --accent: #88B04B;
+      --accent-light: #A8C66C;
+      --text: #5D5C61;
+      --text-muted: #999999;
+      --outline: #EAE5D9;
+      --border-radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Subtle dot grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(136,176,75,0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .snake-logo {
+      display: inline-flex;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .snake-seg {
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 4px;
+      opacity: 1;
+      animation: snake-pulse 2s ease-in-out infinite;
+    }
+
+    .snake-seg:nth-child(1) { animation-delay: 0s; }
+    .snake-seg:nth-child(2) { animation-delay: 0.15s; border-radius: 3px; background: var(--accent-light); width: 12px; height: 12px; margin-top: 1px; }
+    .snake-seg:nth-child(3) { animation-delay: 0.3s; border-radius: 3px; background: var(--accent-light); width: 10px; height: 10px; margin-top: 2px; }
+    .snake-seg:nth-child(4) { animation-delay: 0.45s; border-radius: 3px; background: var(--accent-light); width: 9px; height: 9px; margin-top: 2.5px; opacity: 0.7; }
+
+    @keyframes snake-pulse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .app-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 52px);
+      color: var(--text);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .app-title em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .updated-pill {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 5px 14px;
+      background: var(--card-soft);
+      border: 1px solid var(--outline);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 40px 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--outline);
+    }
+
+    .divider-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* Section cards */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--outline);
+      border-radius: var(--border-radius);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .section:hover {
+      box-shadow: 0 4px 20px rgba(136,176,75,0.1);
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .section p + p {
+      margin-top: 10px;
+    }
+
+    /* Data list */
+    .data-list {
+      list-style: none;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .data-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .data-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: var(--card-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Contact section */
+    .contact-card {
+      background: var(--accent);
+      border-radius: var(--border-radius);
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .contact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: #fff;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer .brand {
+      font-family: 'DM Serif Display', serif;
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .wrapper { padding: 40px 16px 80px; }
+      .section { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="snake-logo">
+        <div class="snake-seg"></div>
+        <div class="snake-seg"></div>
+        <div class="snake-seg"></div>
+        <div class="snake-seg"></div>
+      </div>
+      <h1 class="app-title">Snake <em>Zen</em></h1>
+      <p class="subtitle">Privacy Policy</p>
+      <span class="updated-pill">Last updated: March 30, 2026</span>
+    </div>
+
+    <!-- Intro -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">01</div>
+        <h2 class="section-title">Overview</h2>
+      </div>
+      <p>Snake Zen is a relaxing snake game developed by DeskWorkSolutions. We believe in keeping things simple — including how we handle your data. This policy explains what we collect, why, and how it's used.</p>
+      <p>By playing Snake Zen, you agree to the practices described in this policy.</p>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- What we collect -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">02</div>
+        <h2 class="section-title">What We Collect</h2>
+      </div>
+      <p>We collect only the minimum data needed to run the game and leaderboard features:</p>
+      <ul class="data-list">
+        <li><strong>Display name</strong> — the name you choose to appear on the leaderboard. This is optional and chosen by you.</li>
+        <li><strong>Game scores & stats</strong> — your high score, combo history, snake length, and play time, stored to power the leaderboard.</li>
+        <li><strong>Device ID</strong> — an anonymous identifier used by Firebase to link your session to your leaderboard record. No personal information is tied to this.</li>
+        <li><strong>Crash logs</strong> — automatic error reports to help us fix bugs and improve stability.</li>
+        <li><strong>App interactions</strong> — general usage data (e.g. which screens are visited) used to improve the experience.</li>
+      </ul>
+      <div class="highlight-box">
+        We do <strong>not</strong> collect your real name, email address, phone number, location, or any sensitive personal information.
+      </div>
+    </div>
+
+    <!-- How we use it -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">03</div>
+        <h2 class="section-title">How We Use It</h2>
+      </div>
+      <ul class="data-list">
+        <li>To display your score on the global leaderboard</li>
+        <li>To track your personal best and game statistics</li>
+        <li>To identify and fix crashes or performance issues</li>
+        <li>To understand general app usage and improve features</li>
+      </ul>
+      <p style="margin-top: 14px;">We do not use your data for advertising, marketing, or sell it to any third parties.</p>
+    </div>
+
+    <!-- Firebase -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">04</div>
+        <h2 class="section-title">Firebase & Third Parties</h2>
+      </div>
+      <p>Snake Zen uses <strong>Google Firebase</strong> (Realtime Database and Crashlytics) to store leaderboard data and capture crash reports. Firebase operates under Google's privacy policy.</p>
+      <p>All data transmitted between the app and Firebase is <strong>encrypted in transit</strong> using HTTPS/TLS.</p>
+      <div class="highlight-box">
+        We do not share your data with any other third-party services.
+      </div>
+    </div>
+
+    <!-- Data retention -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">05</div>
+        <h2 class="section-title">Data Retention & Deletion</h2>
+      </div>
+      <p>Your leaderboard data (name and scores) is stored in Firebase for as long as your record exists. If you uninstall the app, your local session ends, but your leaderboard entry may remain visible to other players.</p>
+      <p>If you'd like your data removed, please contact us and we'll delete your record manually from our Firebase database.</p>
+    </div>
+
+    <!-- Children -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">06</div>
+        <h2 class="section-title">Children's Privacy</h2>
+      </div>
+      <p>Snake Zen is designed for users aged 13 and above. We do not knowingly collect personal information from children under 13. If you believe a child has submitted personal data, please contact us so we can remove it.</p>
+    </div>
+
+    <!-- Changes -->
+    <div class="section">
+      <div class="section-label">
+        <div class="section-icon">07</div>
+        <h2 class="section-title">Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy occasionally. When we do, we'll update the "Last updated" date at the top of this page. Continued use of the app after any changes means you accept the updated policy.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <h3>Questions?</h3>
+      <p>Feel free to reach out if you have any questions about this privacy policy or how your data is handled.</p>
+      <a href="mailto:abbasisarmad11@gmail.com" class="contact-email">abbasisarmad11@gmail.com</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Made with care by <span class="brand">DeskWorkSolutions</span> · Karachi, Pakistan</p>
+      <p style="margin-top: 6px;">© 2026 Snake Zen. All rights reserved.</p>
+    </div>
+
+  </div>
+</body>
+</html>
